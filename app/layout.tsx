@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import { League_Spartan } from "next/font/google";
 import "./globals.css";
 
-const leagueSpartan = League_Spartan({
-  variable: "--font-league-spartan",
+const spartan = League_Spartan({
   subsets: ["latin"],
-  display: "swap", // Added for better loading performance
+  weight: ["500", "700"],
+  variable: "--font-spartan",
 });
 
 export const metadata: Metadata = {
-  title: "Shinzvoice",
-  description: "an invoice app",
+  title: "ShinzDev Invoice App",
+  description: "Invoice management system",
 };
 
 export default function RootLayout({
@@ -19,10 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full">
-      <body 
-        className={`${leagueSpartan.variable} font-sans min-h-full flex flex-col antialiased`}
-      >
+    <html lang="en">
+      <body className={`${spartan.variable} font-sans antialiased bg-[#F8F8FB] text-[#0C0E16] dark:bg-[#141625] dark:text-white transition-colors duration-300`}>
         {children}
       </body>
     </html>
