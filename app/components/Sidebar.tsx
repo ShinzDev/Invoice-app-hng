@@ -1,48 +1,35 @@
+
 import Image from 'next/image';
-import { Moon } from 'lucide-react'; 
+import { Moon } from 'lucide-react';
+
 export default function Sidebar() {
   return (
-    <section className="flex h-screen w-20 flex-col justify-between bg-[#373b53] ">
-     
-      <div className="relative flex items-center justify-center">
-        {/* The purple background container */}
-        <div className="relative flex h-20 w-20 items-center justify-center rounded-r-3xl ">
-          {/* Logo Placeholder (using a div for the white icon) */}
-          <Image
-            src="/logo.png" // Replace with your image path
-            alt="Profile"
-            height={100}
-            width={100}
-            loading='eager'
-            className="object-cover"
-          />
-          
-          {/* Lower shaded part of the logo background */}
-        </div>
-      </div>
+    <aside className="bg-[#373b53] lg:h-screen lg:w-24 w-full flex lg:flex-col justify-between lg:rounded-r-[20px] sticky top-0 z-50">
+      <Image
+        src="/logo.png" 
+        alt="Logo"
+        height={100}
+        width={100}
+        loading='eager'
+      />
 
-      {/* Bottom Section: Theme Toggle & Profile */}
-      <div className="flex flex-col items-center">
-        {/* Dark Mode Toggle */}
-        <button className="mb-6 text-[#7e88c3] hover:text-white transition-colors">
+      {/* Bottom Section */}
+      <div className="flex lg:flex-col items-center">
+        <button className="p-6 lg:p-8 text-[#7e88c3] hover:text-white transition-colors">
           <Moon size={20} fill="currentColor" />
         </button>
-
-        {/* Divider */}
-        <div className="h-px w-full bg-[#494e6e] mb-6" />
-
-        {/* Profile Avatar */}
-        <div className="mb-2">
-          <div className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-transparent hover:border-[#7c5dfa] transition-all">
-            {/*<Image
-              src="/logo.png" // Replace with your image path
-              alt="Profile"
-              fill
-              className="object-cover"
-            />*/}
+        <div className="w-[1px] h-full lg:w-full lg:h-[1px] bg-[#494e6e]" />
+        <div className="p-6 lg:p-8">
+          <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-transparent hover:border-purple-500 cursor-pointer transition-all">
+            <Image 
+              src="/logo.png" 
+              alt="Avatar" 
+              width={32} 
+              height={32} 
+            />
           </div>
         </div>
       </div>
-    </section>
+    </aside>
   );
 }
