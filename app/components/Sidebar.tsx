@@ -2,17 +2,18 @@ import Image from 'next/image';
 import { Moon } from 'lucide-react'; 
 export default function Sidebar() {
   return (
-    <section className="flex h-screen w-20 flex-col justify-between bg-[#373b53] py-6">
+    <section className="flex h-screen w-20 flex-col justify-between bg-[#373b53] ">
      
       <div className="relative flex items-center justify-center">
         {/* The purple background container */}
-        <div className="relative flex h-20 w-20 items-center justify-center rounded-r-3xl bg-[#7c5dfa]">
+        <div className="relative flex h-20 w-20 items-center justify-center rounded-r-3xl ">
           {/* Logo Placeholder (using a div for the white icon) */}
           <Image
             src="/logo.png" // Replace with your image path
             alt="Profile"
             height={100}
             width={100}
+            loading='eager'
             className="object-cover"
           />
           
