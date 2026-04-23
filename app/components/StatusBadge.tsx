@@ -1,4 +1,4 @@
-// components/StatusBadge.tsx
+
 const statusStyles = {
   paid: "bg-emerald-50 text-emerald-500",
   pending: "bg-orange-50 text-orange-400",
