@@ -2,9 +2,11 @@
 import Image from 'next/image';
 import { Moon } from 'lucide-react';
 
+
+
 export default function Sidebar() {
   return (
-    <aside className="bg-[#373b53] lg:h-screen lg:w-24 w-full flex lg:flex-col justify-between lg:rounded-r-[20px] sticky top-0 z-50">
+    <aside className="bg-[#373b53] lg:w-20 w-full h-20 lg:h-screen flex lg:flex-col justify-between lg:rounded-r-3xl shrink-0 z-50">
       <Image
         src="/logo.png" 
         alt="Logo"
@@ -12,22 +14,16 @@ export default function Sidebar() {
         width={100}
         loading='eager'
       />
+     
 
-      {/* Bottom Section */}
+      {/* User Actions */}
       <div className="flex lg:flex-col items-center">
         <button className="p-6 lg:p-8 text-[#7e88c3] hover:text-white transition-colors">
           <Moon size={20} fill="currentColor" />
         </button>
-        <div className="w-[1px] h-full lg:w-full lg:h-[1px] bg-[#494e6e]" />
-        <div className="p-6 lg:p-8">
-          <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-transparent hover:border-purple-500 cursor-pointer transition-all">
-            <Image 
-              src="/logo.png" 
-              alt="Avatar" 
-              width={32} 
-              height={32} 
-            />
-          </div>
+        <div className="w-[1px] h-full lg:h-[1px] lg:w-full bg-[#494e6e]" />
+        <div className="p-6">
+          <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-full border border-purple-400 bg-slate-300" />
         </div>
       </div>
     </aside>
