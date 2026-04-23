@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { League_Spartan } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider as NextThemesProvider } from 'next-themes';
+import Sidebar from "./components/Sidebar";
 
 const spartan = League_Spartan({
   subsets: ["latin"],
@@ -21,11 +21,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${spartan.variable} font-sans antialiased bg-[#F8F8FB] text-[#0C0E16] dark:bg-[#141625] dark:text-white transition-colors duration-300`}>
-        <NextThemesProvider attribute="class" defaultTheme="system" enableSystem>
-              {children}
-            </NextThemesProvider>
-      </body>
-    </html>
+          <body className="bg-[#f8f8fb] flex flex-col lg:flex-row min-h-screen transition-all">
+            {/* Sidebar takes up fixed space on desktop */}
+            <Sidebar />
+            
+            {/* Main takes up the REMAINING space */}
+            <main className="flex-1 lg:h-screen overflow-y-auto px-6 py-8 lg:py-16">
+              {/* This wrapper keeps your content centered and readable */}
+              <div className="max-w-3xl mx-auto w-full">
+                {children}
+              </div>
+            </main>
+          </body>
+        </html>
   );
 }
